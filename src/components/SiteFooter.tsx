@@ -9,7 +9,7 @@ export function SiteFooter() {
             Seven Vending <span className="text-amber">Alberta</span>
           </p>
           <p className="mt-3 text-sm text-silver">
-            Free machine placement and full service across Alberta.
+            Vending machine location finding for operators across Alberta.
           </p>
         </div>
         <div className="font-mono text-xs text-silver">
