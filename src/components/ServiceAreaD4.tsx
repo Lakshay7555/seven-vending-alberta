@@ -13,6 +13,15 @@ const CITIES = [
   "Grande Prairie",
 ];
 
+const ZONES = [
+  "Industrial parks & fabrication shops",
+  "Multi-tenant office towers",
+  "Warehouses & distribution centres",
+  "Gyms, arenas & rec centres",
+  "Apartment & condo lobbies",
+  "Auto dealerships & service bays",
+];
+
 export function ServiceAreaD4() {
   return (
     <section id="d4" className="scroll-mt-28 border-b-2 border-ink/15 bg-paper">
@@ -20,18 +29,28 @@ export function ServiceAreaD4() {
         <div>
           <p className="font-mono text-xs tracking-[0.3em] text-ink/60">D4 / SERVICE AREA</p>
           <h2 className="mt-4 font-display text-3xl tracking-tight text-ink uppercase md:text-4xl">
-            We run routes across Alberta
+            Where we scout
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/80">
-            Our trucks cover the Edmonton and Calgary corridors weekly, with
-            regular runs through the industrial parks in between. If you're
-            outside the list, call us anyway &mdash; if there's a route near you,
-            we'll add the stop.
+            We scout the Edmonton and Calgary corridors weekly and cover the
+            industrial towns in between. If your route runs somewhere not on the
+            list, call us &mdash; if there's enough commercial density, we'll go
+            look at it.
           </p>
           <ul className="mt-10 grid grid-cols-2 gap-px border-2 border-ink/20 bg-ink/20 sm:grid-cols-3">
             {CITIES.map((c) => (
               <li key={c} className="bg-paper px-4 py-3 font-mono text-xs tracking-wide text-ink">
                 {c}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10 font-mono text-xs tracking-[0.2em] text-ink/60">
+            SITE TYPES WE TARGET
+          </p>
+          <ul className="mt-4 grid gap-1 sm:grid-cols-2">
+            {ZONES.map((z) => (
+              <li key={z} className="text-sm text-ink/80">
+                <span className="text-amber">&#9632;</span> {z}
               </li>
             ))}
           </ul>
