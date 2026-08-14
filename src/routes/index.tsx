@@ -2,16 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { HeroA1 } from "@/components/HeroA1";
-import { HowItWorksB2 } from "@/components/HowItWorksB2";
-import { OfferC3 } from "@/components/OfferC3";
+import { WhoWeHelpB2 } from "@/components/WhoWeHelpB2";
+import { ProcessC3 } from "@/components/ProcessC3";
 import { ServiceAreaD4 } from "@/components/ServiceAreaD4";
 import { ContactE5 } from "@/components/ContactE5";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SECTIONS } from "@/components/site-data";
 
-const TITLE = "Seven Vending Alberta — Free Vending Machines for Workplaces";
+const TITLE = "Seven Vending Alberta — Vending Machine Location Finding";
 const DESC =
-  "Free vending machine placement, stocking and service for offices, warehouses, gyms and apartments across Alberta. No cost, no lease.";
+  "We find and secure high-traffic, approved vending machine locations across Alberta for operators. Scouting, site assessment and a placement-ready location report.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,8 +57,8 @@ function Index() {
       <SiteHeader active={active} onSelect={select} />
       <main>
         <HeroA1 onSelect={select} />
-        <HowItWorksB2 />
-        <OfferC3 />
+        <WhoWeHelpB2 />
+        <ProcessC3 />
         <ServiceAreaD4 />
         <ContactE5 />
       </main>
