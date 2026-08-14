@@ -1,7 +1,7 @@
 export const SECTIONS = [
   { code: "A1", id: "a1", label: "Home" },
-  { code: "B2", id: "b2", label: "How it works" },
-  { code: "C3", id: "c3", label: "Machines" },
+  { code: "B2", id: "b2", label: "Who we help" },
+  { code: "C3", id: "c3", label: "What we do" },
   { code: "D4", id: "d4", label: "Service area" },
   { code: "E5", id: "e5", label: "Contact" },
 ] as const;
