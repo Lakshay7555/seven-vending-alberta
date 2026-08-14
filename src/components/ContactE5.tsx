@@ -2,10 +2,11 @@ import { useState, type FormEvent } from "react";
 import { EMAIL, PHONE, PHONE_HREF } from "./site-data";
 
 const FIELDS = [
-  { name: "business", label: "Business name", type: "text", placeholder: "Northside Fabrication" },
-  { name: "city", label: "City / town", type: "text", placeholder: "Leduc" },
-  { name: "email", label: "Email", type: "email", placeholder: "you@business.ca" },
-  { name: "people", label: "Approx. people on site", type: "number", placeholder: "35" },
+  { name: "operator", label: "Operator / company name", type: "text", placeholder: "Northside Vending Co." },
+  { name: "machines", label: "Machines running (or 'just starting')", type: "text", placeholder: "Just starting" },
+  { name: "city", label: "Primary city / region", type: "text", placeholder: "Edmonton" },
+  { name: "email", label: "Email", type: "email", placeholder: "you@operator.ca" },
+  { name: "phone", label: "Phone", type: "tel", placeholder: "(780) 555-0123" },
 ] as const;
 
 export function ContactE5() {
@@ -22,11 +23,12 @@ export function ContactE5() {
         <div>
           <p className="font-mono text-xs tracking-[0.3em] text-amber">E5 / CONTACT</p>
           <h2 className="mt-4 font-display text-3xl tracking-tight text-paper uppercase md:text-4xl">
-            Ask for a machine
+            Get your locations
           </h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-silver">
-            Fill out the slip or just call. We'll tell you straight whether your
-            site makes sense for a machine and what we'd put in it.
+            Tell us about your vending operation and we'll scope the work &mdash;
+            how many locations you need, where, and what the search looks like.
+            Or just call and we'll talk it through.
           </p>
           <dl className="mt-10 border-t border-silver/30 pt-6 font-mono text-sm">
             <div className="flex gap-4 py-1">
@@ -54,8 +56,8 @@ export function ContactE5() {
           </p>
           {sent ? (
             <p className="py-10 font-mono text-sm leading-relaxed text-ink">
-              <span className="text-amber">&#9632;</span> REQUEST LOGGED. We'll call
-              you within one business day at the number on file.
+              <span className="text-amber">&#9632;</span> REQUEST LOGGED. We'll
+              call you within one business day to scope your location search.
             </p>
           ) : (
             <form onSubmit={handleSubmit} className="mt-6 space-y-5">
@@ -72,7 +74,6 @@ export function ContactE5() {
                     name={f.name}
                     type={f.type}
                     required
-                    min={f.type === "number" ? 1 : undefined}
                     placeholder={f.placeholder}
                     className="mt-2 w-full border border-ink/40 bg-paper px-3 py-2 text-sm text-ink outline-none placeholder:text-ink/35 focus:border-amber focus:ring-2 focus:ring-amber/40"
                   />
