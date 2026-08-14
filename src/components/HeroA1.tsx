@@ -6,15 +6,15 @@ export function HeroA1({ onSelect }: { onSelect: (id: string) => void }) {
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 md:grid-cols-[1.25fr_1fr] md:items-center md:py-24">
         <div>
           <p className="font-mono text-xs tracking-[0.3em] text-amber">
-            SELECT A1 &rarr;
+            SELECT A1 &rarr; VENDING LOCATIONS FOUND
           </p>
           <h1 className="mt-4 font-display text-4xl leading-[1.05] tracking-tight text-paper uppercase md:text-6xl">
-            Free vending for your workplace
+            We find the locations. You place the machines.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-silver md:text-lg">
-            We place the machine at no cost, keep it filled, and fix it when it
-            acts up &mdash; snacks, cold drinks and micro-markets for businesses
-            across Alberta.
+            Seven Vending Alberta scouts high-traffic sites across the province,
+            checks traffic, zoning and permission, and hands operators a vetted
+            list of locations they can actually place a machine in.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-6">
             <button
@@ -22,10 +22,10 @@ export function HeroA1({ onSelect }: { onSelect: (id: string) => void }) {
               onClick={() => onSelect("e5")}
               className="border-2 border-amber bg-amber px-7 py-4 font-display text-sm tracking-[0.12em] text-navy uppercase transition-colors hover:bg-navy hover:text-amber active:translate-y-px"
             >
-              Request A Machine
+              Get Your Locations
             </button>
             <p className="font-mono text-xs text-silver">
-              NO COST &middot; NO CONTRACT LOCK-IN
+              LOCATION FINDING ONLY &middot; ALBERTA-WIDE
             </p>
           </div>
         </div>
