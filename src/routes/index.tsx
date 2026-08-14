@@ -6,6 +6,7 @@ import { WhoWeHelpB2 } from "@/components/WhoWeHelpB2";
 import { ProcessC3 } from "@/components/ProcessC3";
 import { ServiceAreaD4 } from "@/components/ServiceAreaD4";
 import { ContactE5 } from "@/components/ContactE5";
+import { FAQ } from "@/components/FAQ";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SECTIONS } from "@/components/site-data";
 
@@ -60,6 +61,7 @@ function Index() {
         <WhoWeHelpB2 />
         <ProcessC3 />
         <ServiceAreaD4 />
+        <FAQ />
         <ContactE5 />
       </main>
       <SiteFooter />
