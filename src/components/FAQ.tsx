@@ -2,32 +2,36 @@ import { useState } from "react";
 
 const FAQS = [
   {
-    q: "What makes a location operator-ready?",
-    a: "It is more than an address. We document the demand signal, food-access context, machine or format fit, space and power, delivery access, the person who can approve the placement, and the route considerations for your operation. Every open item is clearly flagged before you decide whether to place a machine.",
+    q: "What does it cost us?",
+    a: "Nothing. You don't buy or lease the machine, and you don't pay for delivery, installation, stocking, power-efficient equipment upgrades or repairs. You earn a share of what the machine sells.",
   },
   {
-    q: "How do you account for existing vending or smart-market providers?",
-    a: "We ask whether the site already has vending, a micro-market, a pantry program or another hosted service, and whether the host identifies any restrictions or renewal timing. A site with an incumbent is not automatically a bad lead, but we do not present it as an open opportunity without recording the competitive situation.",
+    q: "How do you decide which machine type we get?",
+    a: "We look at how many people are on site, when they're there, who they are and what's nearby. A warehouse on rotating shifts usually needs drinks and filling snacks; an office often does better with coffee; a gym leans toward cold drinks. We recommend the type that fits, and we explain the reasoning.",
   },
   {
-    q: "Why does Seven Vending focus on Edmonton?",
-    a: "Edmonton is where we concentrate our fieldwork: industrial, warehouse, fabrication, logistics and shift-work clusters, plus route-adjacent commercial properties. A focused local search lets us check real demand, access, approval and route fit instead of selling broad, generic lead lists.",
+    q: "What if vending isn't a good fit for our building?",
+    a: "We'll say so. If the foot traffic isn't there or the space doesn't work, putting a machine in only creates a half-empty box in your lobby. We'd rather tell you up front than install something that disappoints everyone.",
   },
   {
-    q: "How long does a typical engagement take?",
-    a: "A single-location targeted search runs roughly 5–10 business days from kickoff to delivered report. A multi-site route typically runs 2–4 weeks. Timing depends on your machine format, the decision-makers involved and how quickly the host responds.",
+    q: "How does the trial period work?",
+    a: "The machine goes in and runs for the trial while we track what sells. We adjust the products based on real sales. If it still isn't right for your building, we remove it at no cost to you and there's nothing further owing.",
   },
   {
-    q: "What information do you need from me before you start?",
-    a: "Five things: (1) the cities or zones you want covered, (2) the machines or formats you run—snacks, drinks, combo, coffee or micro-market, (3) the site types you want, (4) your target demand floor and commission range, and (5) your service radius and desired number of placements.",
+    q: "Who keeps it stocked and fixes it?",
+    a: "We do. Restocking, cleaning, cash and card handling, and any repairs are all handled for you. If something goes wrong, you call us—not a service company, and not your maintenance staff.",
   },
   {
-    q: "Do you guarantee a location will perform?",
-    a: "No. We provide honest demand, access and approval information; we do not guarantee sales. Performance still depends on your product mix, pricing, machine uptime, restock cadence and route execution. We flag weak fit before you commit a machine.",
+    q: "What do you need from us to get started?",
+    a: "Roughly how many people are on site and when, what kind of people they are (staff, residents, members, visitors), where a machine could go, whether there's a power outlet nearby, and who signs off. That's usually a ten-minute conversation.",
   },
   {
-    q: "What if a location falls through after the report?",
-    a: "If a landlord or authorized host backs out within 30 days of delivery for reasons outside your control, we re-scout a replacement of the same type in the same zone at no extra charge. After 30 days, the placement is yours to manage.",
+    q: "How long until the machine is in?",
+    a: "Usually one to three weeks from your approval, depending on the machine type and how quickly access can be arranged for delivery.",
+  },
+  {
+    q: "Can we choose or change the products?",
+    a: "Yes. You see the planned product list before delivery and can add, remove or swap items at any time—healthier options, allergy considerations, local favourites or price points that suit your people.",
   },
 ];
 
@@ -36,13 +40,12 @@ export function FAQ() {
   return (
     <section id="faq" className="scroll-mt-28 border-b-2 border-ink/15 bg-paper">
       <div className="mx-auto max-w-4xl px-4 py-16 md:py-24">
-        <p className="font-mono text-xs tracking-[0.3em] text-ink/60">FAQ / OPERATOR BRIEF</p>
+        <p className="font-mono text-xs tracking-[0.3em] text-ink/60">FAQ / STRAIGHT ANSWERS</p>
         <h2 className="mt-4 font-display text-3xl tracking-tight text-ink uppercase md:text-4xl">
-          Questions before you order
+          Questions before you say yes
         </h2>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink/80">
-          How we screen demand, fit, approval and competitive conditions before we hand a location
-          to your route.
+          Cost, machine choice, the trial period and who looks after the machine once it&rsquo;s in.
         </p>
         <ul className="mt-10 border-2 border-ink/20">
           {FAQS.map((f, i) => {
