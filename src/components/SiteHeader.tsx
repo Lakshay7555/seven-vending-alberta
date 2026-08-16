@@ -20,7 +20,7 @@ export function SiteHeader({
             <img
               src="/brand/seven-vending-alberta-logo-horizontal.png"
               alt="Seven Vending Alberta"
-              className="h-12 w-auto md:h-14"
+              className="h-[4.5rem] w-auto md:h-[5.25rem]"
             />
           </a>
           <a href={PHONE_HREF} className="font-mono text-xs text-amber md:hidden">
