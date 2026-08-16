@@ -1,4 +1,5 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, type FormEvent } from "react";
+import { EMAIL } from "./site-data";
 
 type LocationType =
   "office" | "industrial" | "gym" | "retail" | "school" | "hospitality" | "institution" | "mixed";
@@ -317,6 +318,7 @@ export function MachineFitF4() {
   const [payments, setPayments] = useState<Payments>("mixed");
   const [space, setSpace] = useState<Space>("single");
   const [submitted, setSubmitted] = useState(false);
+  const [leadPrepared, setLeadPrepared] = useState(false);
 
   const recommendation = useMemo(
     () =>
@@ -374,6 +376,43 @@ export function MachineFitF4() {
     { label: "Access", value: labelFor(ACCESS_OPTIONS, access) },
     { label: "Space", value: labelFor(SPACE_OPTIONS, space) },
   ];
+
+  function handleLeadSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const value = (name: string) => String(formData.get(name) ?? "").trim();
+    const subject = `Machine Fit location brief: ${value("property") || "New property lead"}`;
+    const body = [
+      "PROPERTY-MANAGER LEAD",
+      "",
+      `Property / building: ${value("property")}`,
+      `Contact name: ${value("contactName")}`,
+      `Role: ${value("role")}`,
+      `Work email: ${value("email")}`,
+      `Phone: ${value("phone")}`,
+      `City / town: ${value("city")}`,
+      `Preferred contact: ${value("preferredContact")}`,
+      `Additional notes: ${value("notes") || "None provided"}`,
+      "",
+      "MACHINE FIT SCREENING",
+      `Primary suggested format: ${MACHINES[recommendation.primary].title}`,
+      `Alternative format: ${MACHINES[recommendation.secondary].title}`,
+      `Location type: ${labelFor(LOCATIONS, location)}`,
+      `Daily traffic: ${labelFor(TRAFFIC, traffic)}`,
+      `Operating hours: ${labelFor(OPERATING_HOURS, hours)}`,
+      `Primary audience: ${labelFor(AUDIENCES, audience)}`,
+      `Existing amenities: ${labelFor(EXISTING_OFFERS, existing)}`,
+      `Utilities: ${labelFor(UTILITIES, utilities)}`,
+      `Access: ${labelFor(ACCESS_OPTIONS, access)}`,
+      `Payment preference: ${labelFor(PAYMENT_OPTIONS, payments)}`,
+      `Available space: ${labelFor(SPACE_OPTIONS, space)}`,
+      "",
+      "Seven Vending Alberta is a location-to-operator matching service. A matched independent operator handles equipment and service discussions.",
+    ];
+
+    setLeadPrepared(true);
+    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body.join("\n"))}`;
+  }
 
   return (
     <section id="f4" className="scroll-mt-28 border-b-2 border-ink/15 bg-navy text-paper">
@@ -656,6 +695,131 @@ export function MachineFitF4() {
                   revenue guarantee. Seven Vending does not provide or maintain machines; a matched
                   operator confirms the final equipment, service and site requirements.
                 </p>
+
+                <div className="mt-7 border-2 border-ink bg-paper p-5">
+                  <p className="font-mono text-xs tracking-[0.18em] text-amber uppercase">
+                    Pass this brief to an operator
+                  </p>
+                  <h3 className="mt-2 font-display text-xl tracking-tight text-ink uppercase">
+                    Property manager contact details
+                  </h3>
+                  <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink/75">
+                    Add the contact details for the person who can discuss the location. The
+                    prepared email includes this screening brief and opens in your email app for
+                    delivery to Seven Vending Alberta.
+                  </p>
+
+                  {leadPrepared ? (
+                    <div className="mt-5 border-l-4 border-amber bg-amber/10 px-4 py-4 text-sm leading-relaxed text-ink">
+                      <span className="font-mono text-xs tracking-[0.14em] text-ink/70 uppercase">
+                        Email prepared ·{" "}
+                      </span>
+                      Review and send the prefilled email to pass this location need to Seven
+                      Vending Alberta.
+                    </div>
+                  ) : (
+                    <form onSubmit={handleLeadSubmit} className="mt-5 grid gap-4 sm:grid-cols-2">
+                      <label className="block sm:col-span-2">
+                        <span className="font-mono text-xs tracking-[0.14em] text-ink/60 uppercase">
+                          Property / building name
+                        </span>
+                        <input
+                          name="property"
+                          required
+                          placeholder="Northside Business Park"
+                          className="mt-2 w-full border-2 border-ink bg-paper px-3 py-3 text-sm outline-none placeholder:text-ink/35 focus:border-amber"
+                        />
+                      </label>
+                      <label className="block">
+                        <span className="font-mono text-xs tracking-[0.14em] text-ink/60 uppercase">
+                          Contact name
+                        </span>
+                        <input
+                          name="contactName"
+                          required
+                          placeholder="Jordan Lee"
+                          className="mt-2 w-full border-2 border-ink bg-paper px-3 py-3 text-sm outline-none placeholder:text-ink/35 focus:border-amber"
+                        />
+                      </label>
+                      <label className="block">
+                        <span className="font-mono text-xs tracking-[0.14em] text-ink/60 uppercase">
+                          Role / title
+                        </span>
+                        <input
+                          name="role"
+                          required
+                          placeholder="Property manager"
+                          className="mt-2 w-full border-2 border-ink bg-paper px-3 py-3 text-sm outline-none placeholder:text-ink/35 focus:border-amber"
+                        />
+                      </label>
+                      <label className="block">
+                        <span className="font-mono text-xs tracking-[0.14em] text-ink/60 uppercase">
+                          Work email
+                        </span>
+                        <input
+                          name="email"
+                          type="email"
+                          required
+                          placeholder="you@property.ca"
+                          className="mt-2 w-full border-2 border-ink bg-paper px-3 py-3 text-sm outline-none placeholder:text-ink/35 focus:border-amber"
+                        />
+                      </label>
+                      <label className="block">
+                        <span className="font-mono text-xs tracking-[0.14em] text-ink/60 uppercase">
+                          Phone
+                        </span>
+                        <input
+                          name="phone"
+                          type="tel"
+                          required
+                          placeholder="(780) 555-0123"
+                          className="mt-2 w-full border-2 border-ink bg-paper px-3 py-3 text-sm outline-none placeholder:text-ink/35 focus:border-amber"
+                        />
+                      </label>
+                      <label className="block">
+                        <span className="font-mono text-xs tracking-[0.14em] text-ink/60 uppercase">
+                          City / town
+                        </span>
+                        <input
+                          name="city"
+                          required
+                          placeholder="Edmonton"
+                          className="mt-2 w-full border-2 border-ink bg-paper px-3 py-3 text-sm outline-none placeholder:text-ink/35 focus:border-amber"
+                        />
+                      </label>
+                      <label className="block">
+                        <span className="font-mono text-xs tracking-[0.14em] text-ink/60 uppercase">
+                          Preferred contact
+                        </span>
+                        <select
+                          name="preferredContact"
+                          className="mt-2 w-full border-2 border-ink bg-paper px-3 py-3 text-sm outline-none focus:border-amber"
+                        >
+                          <option>Email</option>
+                          <option>Phone call</option>
+                          <option>Either email or phone</option>
+                        </select>
+                      </label>
+                      <label className="block sm:col-span-2">
+                        <span className="font-mono text-xs tracking-[0.14em] text-ink/60 uppercase">
+                          Access or timing notes (optional)
+                        </span>
+                        <textarea
+                          name="notes"
+                          rows={3}
+                          placeholder="For example: visitor parking, loading restrictions, best time for a walkthrough"
+                          className="mt-2 w-full resize-y border-2 border-ink bg-paper px-3 py-3 text-sm outline-none placeholder:text-ink/35 focus:border-amber"
+                        />
+                      </label>
+                      <button
+                        type="submit"
+                        className="sm:col-span-2 border-2 border-ink bg-amber px-5 py-4 font-display text-sm tracking-[0.13em] text-ink uppercase hover:bg-navy hover:text-amber"
+                      >
+                        Prepare operator handoff email
+                      </button>
+                    </form>
+                  )}
+                </div>
               </div>
             )}
           </div>
