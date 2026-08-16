@@ -3,6 +3,7 @@ export const SECTIONS = [
   { id: "b2", label: "Why locations" },
   { id: "mt", label: "Machine types" },
   { id: "c3", label: "How it works" },
+  { id: "f4", label: "Machine fit" },
   { id: "d4", label: "Service area" },
   { id: "e5", label: "Contact" },
 ] as const;

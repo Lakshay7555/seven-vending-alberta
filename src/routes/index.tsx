@@ -5,6 +5,7 @@ import { HeroA1 } from "@/components/HeroA1";
 import { WhoWeHelpB2 } from "@/components/WhoWeHelpB2";
 import { ProcessC3 } from "@/components/ProcessC3";
 import { MachineTypes } from "@/components/MachineTypes";
+import { MachineFitF4 } from "@/components/MachineFitF4";
 import { ServiceAreaD4 } from "@/components/ServiceAreaD4";
 import { ContactE5 } from "@/components/ContactE5";
 import { FAQ } from "@/components/FAQ";
@@ -62,6 +63,7 @@ function Index() {
         <WhoWeHelpB2 />
         <MachineTypes />
         <ProcessC3 />
+        <MachineFitF4 />
         <ServiceAreaD4 />
         <FAQ />
         <ContactE5 />
