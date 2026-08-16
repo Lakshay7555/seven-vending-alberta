@@ -18,7 +18,7 @@ export function SiteHeader({
             className="inline-flex shrink-0 items-center"
           >
             <img
-              src="/brand/seven-vending-alberta-logo-full.webp"
+              src="/brand/seven-vending-alberta-logo-horizontal.png"
               alt="Seven Vending Alberta"
               className="h-12 w-auto md:h-14"
             />
