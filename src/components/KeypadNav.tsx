@@ -14,7 +14,7 @@ export function KeypadNav({
     >
       {SECTIONS.map((s) => (
         <button
-          key={s.code}
+          key={s.id}
           type="button"
           onClick={() => onSelect(s.id)}
           aria-current={active === s.id ? "true" : undefined}

@@ -1,9 +1,9 @@
 export const SECTIONS = [
-  { code: "A1", id: "a1", label: "Home" },
-  { code: "B2", id: "b2", label: "Who we help" },
-  { code: "C3", id: "c3", label: "What we do" },
-  { code: "D4", id: "d4", label: "Service area" },
-  { code: "E5", id: "e5", label: "Contact" },
+  { id: "a1", label: "Home" },
+  { id: "b2", label: "Who we help" },
+  { id: "c3", label: "What we do" },
+  { id: "d4", label: "Service area" },
+  { id: "e5", label: "Contact" },
 ] as const;
 
 export const PHONE = "(780) 555-0177";

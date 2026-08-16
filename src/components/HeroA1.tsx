@@ -6,7 +6,7 @@ export function HeroA1({ onSelect }: { onSelect: (id: string) => void }) {
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 md:grid-cols-[1.25fr_1fr] md:items-center md:py-24">
         <div>
           <p className="font-mono text-xs tracking-[0.3em] text-amber">
-            SELECT A1 &rarr; EDMONTON / ROUTE-READY PLACEMENTS
+            EDMONTON / ROUTE-READY PLACEMENTS
           </p>
           <h1 className="mt-4 font-display text-4xl leading-[1.05] tracking-tight text-paper uppercase md:text-6xl">
             Find route-ready locations built for your machines.

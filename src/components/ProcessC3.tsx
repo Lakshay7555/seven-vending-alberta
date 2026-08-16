@@ -23,7 +23,7 @@ export function ProcessC3() {
   return (
     <section id="c3" className="scroll-mt-28 border-b-2 border-silver/30 bg-navy">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-        <p className="font-mono text-xs tracking-[0.3em] text-amber">C3 / WHAT WE DO</p>
+        <p className="font-mono text-xs tracking-[0.3em] text-amber">WHAT WE DO</p>
         <h2 className="mt-4 max-w-3xl font-display text-3xl tracking-tight text-paper uppercase md:text-4xl">
           From prospect list to operator-ready placement file
         </h2>
