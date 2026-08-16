@@ -38,7 +38,7 @@ export function ServiceAreaD4() {
     <section id="d4" className="scroll-mt-28 border-b-2 border-ink/15 bg-paper">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 md:grid-cols-[1.3fr_1fr] md:items-start md:py-24">
         <div>
-          <p className="font-mono text-xs tracking-[0.3em] text-ink/60">D4 / SERVICE AREA</p>
+          <p className="font-mono text-xs tracking-[0.3em] text-ink/60">SERVICE AREA</p>
           <h2 className="mt-4 font-display text-3xl tracking-tight text-ink uppercase md:text-4xl">
             Edmonton scouting, built around your route.
           </h2>

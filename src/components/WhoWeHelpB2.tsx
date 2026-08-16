@@ -17,7 +17,7 @@ export function WhoWeHelpB2() {
   return (
     <section id="b2" className="scroll-mt-28 border-b-2 border-ink/15 bg-paper">
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
-        <p className="font-mono text-xs tracking-[0.3em] text-ink/60">B2 / WHO WE HELP</p>
+        <p className="font-mono text-xs tracking-[0.3em] text-ink/60">WHO WE HELP</p>
         <h2 className="mt-4 max-w-3xl font-display text-3xl tracking-tight text-ink uppercase md:text-4xl">
           Your field team for route-ready placements.
         </h2>

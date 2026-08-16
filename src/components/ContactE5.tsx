@@ -36,7 +36,7 @@ export function ContactE5() {
     <section id="e5" className="scroll-mt-28 bg-navy">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 md:grid-cols-[1fr_1fr] md:py-24">
         <div>
-          <p className="font-mono text-xs tracking-[0.3em] text-amber">E5 / CONTACT</p>
+          <p className="font-mono text-xs tracking-[0.3em] text-amber">CONTACT</p>
           <h2 className="mt-4 font-display text-3xl tracking-tight text-paper uppercase md:text-4xl">
             Get a route-specific search
           </h2>

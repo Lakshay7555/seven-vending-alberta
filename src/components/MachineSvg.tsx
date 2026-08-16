@@ -26,12 +26,12 @@ export function MachineSvg() {
         )),
       )}
       <rect x="170" y="16" width="54" height="70" fill="#14213D" stroke="#FFB627" strokeWidth="2" />
-      <text x="197" y="60" textAnchor="middle" fill="#FFB627" fontFamily="monospace" fontSize="22">
-        A1
+      <text x="197" y="58" textAnchor="middle" fill="#FFB627" fontFamily="monospace" fontSize="11">
+        HOME
       </text>
-      {["B2", "C3", "D4", "E5"].map((code, i) => (
+      {[0, 1, 2, 3].map((i) => (
         <rect
-          key={code}
+          key={i}
           x={170 + (i % 2) * 28}
           y={100 + Math.floor(i / 2) * 28}
           width="24"
