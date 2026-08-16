@@ -377,6 +377,20 @@ export function MachineFitF4() {
     { label: "Space", value: labelFor(SPACE_OPTIONS, space) },
   ];
 
+  function resetFields() {
+    setLocation("office");
+    setTraffic("medium");
+    setExisting("none");
+    setHours("weekday");
+    setAudience("officeStaff");
+    setUtilities("standard");
+    setAccess("easy");
+    setPayments("mixed");
+    setSpace("single");
+    setSubmitted(false);
+    setLeadPrepared(false);
+  }
+
   function handleLeadSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -616,13 +630,22 @@ export function MachineFitF4() {
               </label>
             </div>
 
-            <button
-              type="button"
-              onClick={() => setSubmitted(true)}
-              className="mt-6 w-full bg-amber px-5 py-4 font-display text-sm tracking-[0.13em] text-ink uppercase hover:bg-amber/85 focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2"
-            >
-              Build operator-ready brief
-            </button>
+            <div className="mt-6 grid gap-3 sm:grid-cols-[1fr_auto]">
+              <button
+                type="button"
+                onClick={() => setSubmitted(true)}
+                className="bg-amber px-5 py-4 font-display text-sm tracking-[0.13em] text-ink uppercase hover:bg-amber/85 focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2"
+              >
+                Build operator-ready brief
+              </button>
+              <button
+                type="button"
+                onClick={resetFields}
+                className="border-2 border-ink bg-paper px-5 py-4 font-mono text-xs tracking-[0.14em] text-ink uppercase hover:bg-ink hover:text-paper focus:outline-none focus:ring-2 focus:ring-amber focus:ring-offset-2"
+              >
+                Reset fields
+              </button>
+            </div>
 
             {submitted && (
               <div className="mt-6 border-t-2 border-ink/15 pt-6" aria-live="polite">

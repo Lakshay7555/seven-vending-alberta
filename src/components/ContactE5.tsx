@@ -1,50 +1,77 @@
 import { useState, type FormEvent } from "react";
 import { EMAIL, PHONE, PHONE_HREF } from "./site-data";
 
-const FIELDS = [
-  {
-    name: "business",
-    label: "Building or business name",
-    type: "text",
-    placeholder: "Northside Business Park",
-  },
-  {
-    name: "people",
-    label: "How many people are on site daily?",
-    type: "text",
-    placeholder: "About 60 staff, day and evening shifts",
-  },
-  {
-    name: "city",
-    label: "City or town",
-    type: "text",
-    placeholder: "Edmonton",
-  },
-  { name: "email", label: "Email", type: "email", placeholder: "you@yourbuilding.ca" },
-  { name: "phone", label: "Phone", type: "tel", placeholder: "(780) 555-0123" },
-] as const;
+const MACHINE_FORMATS = [
+  "Snack machines",
+  "Cold beverage machines",
+  "Coffee / hot beverage machines",
+  "Combo machines",
+  "Water coolers / bottle dispensers",
+  "Healthy or specialty machines",
+  "Micro-markets / smart lockers",
+];
 
 export function ContactE5() {
-  const [sent, setSent] = useState(false);
+  const [formats, setFormats] = useState<string[]>([]);
+  const [emailPrepared, setEmailPrepared] = useState(false);
+  const [formatError, setFormatError] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setSent(true);
+  function toggleFormat(format: string) {
+    setFormats((current) =>
+      current.includes(format) ? current.filter((item) => item !== format) : [...current, format],
+    );
+    setFormatError(false);
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (formats.length === 0) {
+      setFormatError(true);
+      return;
+    }
+
+    const formData = new FormData(event.currentTarget);
+    const value = (name: string) => String(formData.get(name) ?? "").trim();
+    const subject = `Operator interest: ${value("company") || "New vending operator"}`;
+    const body = [
+      "VENDING OPERATOR INTEREST",
+      "",
+      `Company: ${value("company")}`,
+      `Primary contact: ${value("contactName")}`,
+      `Role / title: ${value("role")}`,
+      `Work email: ${value("email")}`,
+      `Phone: ${value("phone")}`,
+      `Primary service area: ${value("serviceArea")}`,
+      `Secondary service area: ${value("secondaryArea") || "None provided"}`,
+      `Formats operated: ${formats.join(", ")}`,
+      `Current route / onboarding capacity: ${value("capacity")}`,
+      `Preferred location types: ${value("locationTypes") || "None provided"}`,
+      `Additional notes: ${value("notes") || "None provided"}`,
+      "",
+      "Seven Vending Alberta gathers property location needs and connects suitable requests with independent vending operators. Seven Vending does not provide or maintain machines.",
+    ];
+
+    setEmailPrepared(true);
+    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body.join("\n"))}`;
   }
 
   return (
     <section id="e5" className="scroll-mt-28 bg-navy">
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 md:grid-cols-[1fr_1fr] md:py-24">
+      <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 md:grid-cols-[1fr_1.15fr] md:py-24">
         <div>
-          <p className="font-mono text-xs tracking-[0.3em] text-amber">CONTACT</p>
+          <p className="font-mono text-xs tracking-[0.3em] text-amber">FOR VENDING OPERATORS</p>
           <h2 className="mt-4 font-display text-3xl tracking-tight text-paper uppercase md:text-4xl">
-            Find out what fits your space
+            Receive location opportunities that fit your route.
           </h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-silver">
-            Tell us a little about your building and who&rsquo;s in it. We&rsquo;ll turn that into a
-            clear location brief and pass it to a suitable independent vending operator. Seven
-            Vending does not provide or maintain machines; the operator handles any equipment and
-            service discussion directly with you. No cost to share your location need.
+            Seven Vending Alberta screens building needs and connects suitable requests with
+            independent vending operators. Share where you operate, what formats you support and
+            your current capacity so we can identify location opportunities that may fit your
+            operation.
+          </p>
+          <p className="mt-6 max-w-md text-sm leading-relaxed text-silver/80">
+            We do not own, supply or service machines. We create a clear handoff between the
+            property contact and the operator best positioned to assess the opportunity.
           </p>
           <dl className="mt-10 border-t border-silver/30 pt-6 font-mono text-sm">
             <div className="flex gap-4 py-1">
@@ -68,38 +95,166 @@ export function ContactE5() {
 
         <div className="border-2 border-silver bg-paper p-6 md:p-8">
           <p className="border-b-2 border-dashed border-ink/30 pb-3 font-mono text-xs tracking-[0.2em] text-ink/70">
-            LOCATION REQUEST &mdash; NO. 0007
+            OPERATOR INTEREST &mdash; ROUTE PROFILE
           </p>
-          {sent ? (
-            <p className="py-10 font-mono text-sm leading-relaxed text-ink">
-              <span className="text-amber">&#9632;</span> REQUEST RECEIVED. We&rsquo;ll review your
-              location need and pass it to a suitable operator when there is a fit.
-            </p>
+
+          {emailPrepared ? (
+            <div className="py-10 font-mono text-sm leading-relaxed text-ink">
+              <span className="text-amber">&#9632;</span> EMAIL PREPARED. Review and send the
+              prefilled email to share your operator profile with Seven Vending Alberta. We will
+              contact you when a location need appears to fit your stated coverage and formats.
+            </div>
           ) : (
-            <form onSubmit={handleSubmit} className="mt-6 space-y-5">
-              {FIELDS.map((f) => (
-                <div key={f.name}>
-                  <label
-                    htmlFor={f.name}
-                    className="block font-mono text-xs tracking-wide text-ink/70 uppercase"
-                  >
-                    {f.label}
-                  </label>
-                  <input
-                    id={f.name}
-                    name={f.name}
-                    type={f.type}
-                    required
-                    placeholder={f.placeholder}
-                    className="mt-2 w-full border border-ink/40 bg-paper px-3 py-2 text-sm text-ink outline-none placeholder:text-ink/35 focus:border-amber focus:ring-2 focus:ring-amber/40"
-                  />
+            <form onSubmit={handleSubmit} className="mt-6 grid gap-5 sm:grid-cols-2">
+              <label className="block sm:col-span-2">
+                <span className="font-mono text-xs tracking-wide text-ink/70 uppercase">
+                  Operating company
+                </span>
+                <input
+                  name="company"
+                  required
+                  placeholder="Prairie Route Vending"
+                  className="mt-2 w-full border border-ink/40 bg-paper px-3 py-3 text-sm text-ink outline-none placeholder:text-ink/35 focus:border-amber focus:ring-2 focus:ring-amber/40"
+                />
+              </label>
+              <label className="block">
+                <span className="font-mono text-xs tracking-wide text-ink/70 uppercase">
+                  Primary contact
+                </span>
+                <input
+                  name="contactName"
+                  required
+                  placeholder="Jordan Lee"
+                  className="mt-2 w-full border border-ink/40 bg-paper px-3 py-3 text-sm text-ink outline-none placeholder:text-ink/35 focus:border-amber focus:ring-2 focus:ring-amber/40"
+                />
+              </label>
+              <label className="block">
+                <span className="font-mono text-xs tracking-wide text-ink/70 uppercase">
+                  Role / title
+                </span>
+                <input
+                  name="role"
+                  required
+                  placeholder="Route manager"
+                  className="mt-2 w-full border border-ink/40 bg-paper px-3 py-3 text-sm text-ink outline-none placeholder:text-ink/35 focus:border-amber focus:ring-2 focus:ring-amber/40"
+                />
+              </label>
+              <label className="block">
+                <span className="font-mono text-xs tracking-wide text-ink/70 uppercase">
+                  Work email
+                </span>
+                <input
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="you@operator.ca"
+                  className="mt-2 w-full border border-ink/40 bg-paper px-3 py-3 text-sm text-ink outline-none placeholder:text-ink/35 focus:border-amber focus:ring-2 focus:ring-amber/40"
+                />
+              </label>
+              <label className="block">
+                <span className="font-mono text-xs tracking-wide text-ink/70 uppercase">Phone</span>
+                <input
+                  name="phone"
+                  type="tel"
+                  required
+                  placeholder="(780) 555-0123"
+                  className="mt-2 w-full border border-ink/40 bg-paper px-3 py-3 text-sm text-ink outline-none placeholder:text-ink/35 focus:border-amber focus:ring-2 focus:ring-amber/40"
+                />
+              </label>
+              <label className="block">
+                <span className="font-mono text-xs tracking-wide text-ink/70 uppercase">
+                  Primary service area
+                </span>
+                <input
+                  name="serviceArea"
+                  required
+                  placeholder="Edmonton and surrounding area"
+                  className="mt-2 w-full border border-ink/40 bg-paper px-3 py-3 text-sm text-ink outline-none placeholder:text-ink/35 focus:border-amber focus:ring-2 focus:ring-amber/40"
+                />
+              </label>
+              <label className="block">
+                <span className="font-mono text-xs tracking-wide text-ink/70 uppercase">
+                  Secondary service area
+                </span>
+                <input
+                  name="secondaryArea"
+                  placeholder="Optional"
+                  className="mt-2 w-full border border-ink/40 bg-paper px-3 py-3 text-sm text-ink outline-none placeholder:text-ink/35 focus:border-amber focus:ring-2 focus:ring-amber/40"
+                />
+              </label>
+
+              <fieldset className="sm:col-span-2">
+                <legend className="font-mono text-xs tracking-wide text-ink/70 uppercase">
+                  Machine formats you operate
+                </legend>
+                <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                  {MACHINE_FORMATS.map((format) => {
+                    const checked = formats.includes(format);
+                    return (
+                      <label
+                        key={format}
+                        className={`flex cursor-pointer items-center gap-3 border px-3 py-3 text-sm ${checked ? "border-ink bg-amber/15" : "border-ink/30 bg-paper"}`}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={checked}
+                          onChange={() => toggleFormat(format)}
+                          className="h-4 w-4 accent-amber"
+                        />
+                        <span>{format}</span>
+                      </label>
+                    );
+                  })}
                 </div>
-              ))}
+                {formatError && (
+                  <p className="mt-2 font-mono text-xs text-red">
+                    SELECT AT LEAST ONE MACHINE FORMAT.
+                  </p>
+                )}
+              </fieldset>
+
+              <label className="block sm:col-span-2">
+                <span className="font-mono text-xs tracking-wide text-ink/70 uppercase">
+                  Current route / onboarding capacity
+                </span>
+                <select
+                  name="capacity"
+                  required
+                  className="mt-2 w-full border border-ink/40 bg-paper px-3 py-3 text-sm text-ink outline-none focus:border-amber focus:ring-2 focus:ring-amber/40"
+                >
+                  <option value="">Select current capacity</option>
+                  <option>Ready to review new locations now</option>
+                  <option>Capacity for one to two additional locations</option>
+                  <option>Capacity for several additional locations</option>
+                  <option>Interested in future opportunities only</option>
+                </select>
+              </label>
+              <label className="block sm:col-span-2">
+                <span className="font-mono text-xs tracking-wide text-ink/70 uppercase">
+                  Preferred location types (optional)
+                </span>
+                <input
+                  name="locationTypes"
+                  placeholder="For example: offices, warehouses, gyms, schools"
+                  className="mt-2 w-full border border-ink/40 bg-paper px-3 py-3 text-sm text-ink outline-none placeholder:text-ink/35 focus:border-amber focus:ring-2 focus:ring-amber/40"
+                />
+              </label>
+              <label className="block sm:col-span-2">
+                <span className="font-mono text-xs tracking-wide text-ink/70 uppercase">
+                  Notes for location matching (optional)
+                </span>
+                <textarea
+                  name="notes"
+                  rows={3}
+                  placeholder="Share route constraints, service requirements, minimum traffic thresholds or preferred building types."
+                  className="mt-2 w-full resize-y border border-ink/40 bg-paper px-3 py-3 text-sm text-ink outline-none placeholder:text-ink/35 focus:border-amber focus:ring-2 focus:ring-amber/40"
+                />
+              </label>
               <button
                 type="submit"
-                className="w-full border-2 border-ink bg-amber px-6 py-3 font-display text-sm tracking-[0.12em] text-navy uppercase transition-colors hover:bg-navy hover:text-amber active:translate-y-px"
+                className="sm:col-span-2 w-full border-2 border-ink bg-amber px-6 py-4 font-display text-sm tracking-[0.12em] text-navy uppercase transition-colors hover:bg-navy hover:text-amber active:translate-y-px"
               >
-                Send Request
+                Prepare operator profile email
               </button>
             </form>
           )}
