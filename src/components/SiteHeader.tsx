@@ -18,9 +18,9 @@ export function SiteHeader({
             className="inline-flex shrink-0 items-center"
           >
             <img
-              src="/brand/seven-vending-alberta-logo.png"
+              src="/brand/seven-vending-alberta-logo-mark.png"
               alt="Seven Vending Alberta"
-              className="w-48 h-auto md:w-56"
+              className="h-12 w-12 object-contain md:h-14 md:w-14"
             />
           </a>
           <a href={PHONE_HREF} className="font-mono text-xs text-amber md:hidden">
