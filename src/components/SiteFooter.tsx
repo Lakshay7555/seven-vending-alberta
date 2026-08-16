@@ -9,7 +9,8 @@ export function SiteFooter() {
             Seven Vending <span className="text-amber">Alberta</span>
           </p>
           <p className="mt-3 text-sm text-silver">
-            Vending machine location finding for operators across Alberta.
+            Field-verified, route-specific placement acquisition for vending operators across
+            Alberta.
           </p>
         </div>
         <div className="font-mono text-xs text-silver">

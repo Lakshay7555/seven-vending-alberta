@@ -1,6 +1,6 @@
 const CITIES = [
-  "Edmonton",
-  "Calgary",
+  "Edmonton — primary",
+  "Calgary — selective",
   "Red Deer",
   "Sherwood Park",
   "St. Albert",
@@ -13,12 +13,23 @@ const CITIES = [
   "Grande Prairie",
 ];
 
+const PLAYBOOKS = [
+  {
+    city: "Edmonton first",
+    body: "We prioritize industrial, warehouse, fabrication, logistics and shift-work clusters—especially where occupancy and route density support repeat service.",
+  },
+  {
+    city: "Calgary selective",
+    body: "We evaluate small and mid-bay workplaces, plus routeable apartment, hotel, institutional and arena opportunities on format fit and property access.",
+  },
+];
+
 const ZONES = [
-  "Industrial parks & fabrication shops",
-  "Multi-tenant office towers",
-  "Warehouses & distribution centres",
+  "Industrial, warehouse & shift-work sites",
+  "Small & mid-bay workplaces",
+  "Route-adjacent commercial clusters",
+  "Apartments, hotels & institutions",
   "Gyms, arenas & rec centres",
-  "Apartment & condo lobbies",
   "Auto dealerships & service bays",
 ];
 
@@ -29,14 +40,24 @@ export function ServiceAreaD4() {
         <div>
           <p className="font-mono text-xs tracking-[0.3em] text-ink/60">D4 / SERVICE AREA</p>
           <h2 className="mt-4 font-display text-3xl tracking-tight text-ink uppercase md:text-4xl">
-            Where we scout
+            Edmonton first. Calgary when the fit is right.
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/80">
-            We scout the Edmonton and Calgary corridors weekly and cover the
-            industrial towns in between. If your route runs somewhere not on the
-            list, call us &mdash; if there's enough commercial density, we'll go
-            look at it.
+            We scout across Alberta, but we do not treat every city or address the same. Edmonton is
+            our primary market for route-density and industrial opportunity. Calgary is a targeted
+            secondary market where we validate the operator&rsquo;s machine, site format, access and
+            service economics before recommending a placement.
           </p>
+          <div className="mt-8 grid gap-px border-2 border-ink/20 bg-ink/20 md:grid-cols-2">
+            {PLAYBOOKS.map((playbook) => (
+              <article key={playbook.city} className="bg-paper p-5">
+                <p className="font-mono text-xs tracking-[0.18em] text-amber uppercase">
+                  {playbook.city}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-ink/80">{playbook.body}</p>
+              </article>
+            ))}
+          </div>
           <ul className="mt-10 grid grid-cols-2 gap-px border-2 border-ink/20 bg-ink/20 sm:grid-cols-3">
             {CITIES.map((c) => (
               <li key={c} className="bg-paper px-4 py-3 font-mono text-xs tracking-wide text-ink">
@@ -58,7 +79,7 @@ export function ServiceAreaD4() {
         <svg
           viewBox="0 0 200 300"
           role="img"
-          aria-label="Outline map of Alberta"
+          aria-label="Outline map of Alberta showing Edmonton and Calgary"
           className="h-auto w-44 justify-self-center md:w-56"
         >
           <path

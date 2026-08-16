@@ -2,14 +2,14 @@ const GROUPS = [
   {
     tag: "NEW OPERATORS",
     title: "For new operators",
-    body: "You bought a machine, or you're about to, and you have no idea who to call or what a good spot even looks like. We map out your first locations \u2014 real addresses, real foot traffic, a named contact who has already said yes. You start earning instead of cold-calling strip malls.",
-    points: ["First 1\u20133 placements", "Owner intro handled", "No prior contacts needed"],
+    body: "You have a machine—or a plan for one—but no reliable route yet. We start with the machine type, service radius and target customer, then scout for places with repeat demand, workable access and a decision-maker path. You get an approval-ready starting point instead of a generic directory list.",
+    points: ["First 1–3 placements", "Machine and route brief", "Written approval path"],
   },
   {
     tag: "ESTABLISHED",
     title: "For established operators",
-    body: "You're expanding across Alberta and your route is already full. We're the boots on the ground: we scout, walk the sites, check permission and power, and hand you a vetted shortlist. You stock and maintain \u2014 the part that actually pays.",
-    points: ["Route-adjacent scouting", "Vetted before you drive", "Volume placements"],
+    body: "You need expansion that fits the route you already run. We scout route-density clusters, validate shift patterns and food access, and check whether a host already has vending, a micro-market or a restrictive service arrangement. You receive a shortlist built for your machines—not a host list to chase blind.",
+    points: ["Route-adjacent scouting", "Incumbent-format check", "Field-verified placement files"],
   },
 ];
 
@@ -19,7 +19,7 @@ export function WhoWeHelpB2() {
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <p className="font-mono text-xs tracking-[0.3em] text-ink/60">B2 / WHO WE HELP</p>
         <h2 className="mt-4 max-w-3xl font-display text-3xl tracking-tight text-ink uppercase md:text-4xl">
-          We find the spots. You run the machines.
+          Your field team for route-ready placements.
         </h2>
         <div className="mt-12 grid gap-px border-2 border-ink/20 bg-ink/20 md:grid-cols-2">
           {GROUPS.map((g) => (

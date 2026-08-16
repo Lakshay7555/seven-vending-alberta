@@ -1,21 +1,21 @@
 const STEPS = [
   {
     n: "01",
-    title: "Research & scout",
-    body: "We build a target list from commercial density, employee counts, shift patterns and existing vending coverage, then physically drive and walk the shortlist. No desk-only guesses.",
-    detail: "OUTPUT: TARGET LIST",
+    title: "Research & route screen",
+    body: "We build a target list around commercial density, workforce or visitor patterns, shift schedules, food access and your service radius. Then we screen for existing vending, micro-market or pantry coverage before we spend time on site.",
+    detail: "OUTPUT: TARGET + COMPETITION SCREEN",
   },
   {
     n: "02",
-    title: "Site assessment & approval",
-    body: "On site we count traffic at peak hours, check the wall space, the outlet, delivery access and building rules, then speak to whoever actually signs off and get permission in writing.",
-    detail: "OUTPUT: WRITTEN OK",
+    title: "Format fit & approval",
+    body: "On site we assess demand, machine footprint, power, delivery access and building rules. We confirm whether conventional vending is the right fit, speak to the decision-maker and document the approval path in writing.",
+    detail: "OUTPUT: FORMAT + WRITTEN OK",
   },
   {
     n: "03",
-    title: "Location report",
-    body: "You get a report per location: address, contact name and number, traffic estimate, recommended machine type, commission expected, and access notes. Install-ready.",
-    detail: "OUTPUT: PLACEMENT FILE",
+    title: "Placement file",
+    body: "You get the facts your operator needs: address, contact, demand observations, recommended machine or format, incumbent-service status, access notes and route considerations. Clear next steps—not a raw lead list.",
+    detail: "OUTPUT: OPERATOR-READY PLACEMENT FILE",
   },
 ];
 
@@ -25,7 +25,7 @@ export function ProcessC3() {
       <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <p className="font-mono text-xs tracking-[0.3em] text-amber">C3 / WHAT WE DO</p>
         <h2 className="mt-4 max-w-3xl font-display text-3xl tracking-tight text-paper uppercase md:text-4xl">
-          Three steps from blank map to signed spot
+          From prospect list to operator-ready placement file
         </h2>
         <ol className="mt-12 grid gap-px border-2 border-silver/40 bg-silver/40 md:grid-cols-3">
           {STEPS.map((s) => (
@@ -42,8 +42,8 @@ export function ProcessC3() {
           ))}
         </ol>
         <p className="mt-8 border-l-4 border-red pl-4 font-mono text-xs tracking-wide text-silver">
-          <span className="text-red">NOTE:</span> we don&rsquo;t sell, install or
-          service machines. Location finding only.
+          <span className="text-red">NOTE:</span> we don&rsquo;t sell, install or service machines.
+          We work for the operator&rsquo;s route—not as another host-facing vending supplier.
         </p>
       </div>
     </section>
