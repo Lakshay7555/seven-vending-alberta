@@ -23,9 +23,6 @@ export function HeroA1({ onSelect }: { onSelect: (id: string) => void }) {
             >
               See What Fits My Space
             </button>
-            <p className="font-mono text-xs text-silver">
-              ZERO UPFRONT COST &middot; REVENUE SHARE ONLY IF IT SELLS &middot; RISK-FREE TRIAL
-            </p>
           </div>
         </div>
         <div className="justify-self-center md:justify-self-end">
