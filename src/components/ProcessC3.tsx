@@ -7,15 +7,15 @@ const STEPS = [
   },
   {
     n: "02",
-    title: "We match the right machine",
-    body: "We recommend the machine type and product mix that suits your people, and explain why. You see what's going in before anything is delivered, and you can change it.",
-    detail: "YOU GET: A CLEAR RECOMMENDATION",
+    title: "We match the right operator",
+    body: "We turn your location need into a clear brief: site type, daily traffic, amenities already present and the format likely to fit. Then we pass it to an independent vending operator whose offering matches the need.",
+    detail: "YOU GET: A CLEAR OPERATOR MATCH",
   },
   {
     n: "03",
-    title: "You approve and launch",
-    body: "Once you approve the plan, the machine is delivered, installed and stocked at no cost. We keep the product mix aligned with what your people actually use.",
-    detail: "YOU STAY IN CONTROL",
+    title: "You work with the operator",
+    body: "The matched operator contacts you to discuss equipment, product mix, service and any site requirements. Seven Vending does not supply, install, stock or repair machines.",
+    detail: "OPERATOR HANDLES EQUIPMENT & SERVICE",
   },
 ];
 
@@ -42,8 +42,8 @@ export function ProcessC3() {
           ))}
         </ol>
         <p className="mt-8 border-l-4 border-red pl-4 font-mono text-xs tracking-wide text-silver">
-          <span className="text-red">NOTE:</span> nothing is delivered until you approve the final
-          machine and product plan for your building.
+          <span className="text-red">NOTE:</span> Seven Vending Alberta only matches location needs
+          with operators; the matched operator handles all equipment and service decisions.
         </p>
       </div>
     </section>

@@ -41,9 +41,10 @@ export function ContactE5() {
             Find out what fits your space
           </h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-silver">
-            Tell us a little about your building and who&rsquo;s in it. We&rsquo;ll come back with a
-            straight recommendation—which machine type suits you, what it would stock, and how we
-            would support it. No cost, no pressure, and no obligation to go ahead.
+            Tell us a little about your building and who&rsquo;s in it. We&rsquo;ll turn that into a
+            clear location brief and pass it to a suitable independent vending operator. Seven
+            Vending does not provide or maintain machines; the operator handles any equipment and
+            service discussion directly with you. No cost to share your location need.
           </p>
           <dl className="mt-10 border-t border-silver/30 pt-6 font-mono text-sm">
             <div className="flex gap-4 py-1">
@@ -71,8 +72,8 @@ export function ContactE5() {
           </p>
           {sent ? (
             <p className="py-10 font-mono text-sm leading-relaxed text-ink">
-              <span className="text-amber">&#9632;</span> REQUEST RECEIVED. We&rsquo;ll call you
-              within one business day with a recommendation for your space.
+              <span className="text-amber">&#9632;</span> REQUEST RECEIVED. We&rsquo;ll review your
+              location need and pass it to a suitable operator when there is a fit.
             </p>
           ) : (
             <form onSubmit={handleSubmit} className="mt-6 space-y-5">

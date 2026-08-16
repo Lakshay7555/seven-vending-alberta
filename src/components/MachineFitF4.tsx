@@ -204,9 +204,10 @@ export function MachineFitF4() {
               Find the format that fits the location.
             </h2>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-paper/80">
-              Use the site conditions to identify a sensible starting format before a field review.
-              The tool weighs location type, expected daily traffic and what is already provided in
-              the building so you can avoid duplicating an existing amenity.
+              Use the site conditions to identify a sensible starting format before your location
+              need is passed to an independent vending operator. The tool weighs location type,
+              expected daily traffic and what is already provided in the building so you can avoid
+              duplicating an existing amenity.
             </p>
             <p className="mt-10 font-mono text-xs tracking-[0.2em] text-amber uppercase">
               What this screens for
@@ -331,9 +332,10 @@ export function MachineFitF4() {
                 </div>
 
                 <p className="mt-5 text-xs leading-relaxed text-ink/60">
-                  This is a format-screening tool, not a revenue guarantee. Confirm demand, site
-                  rules, power, machine footprint, delivery access and the host approval path before
-                  placing equipment.
+                  This is a format-screening and operator-matching tool, not an equipment offer or
+                  revenue guarantee. Seven Vending does not provide or maintain machines; the
+                  matched operator confirms demand, site rules, equipment, service and approval
+                  requirements.
                 </p>
               </div>
             )}

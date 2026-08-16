@@ -43,9 +43,10 @@ export function ServiceAreaD4() {
             Serving Edmonton and the surrounding area.
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/80">
-            We visit buildings across Edmonton and the towns around it, so service calls and
-            restocking happen quickly. If your building is nearby but not on the list, ask—we&rsquo;ll
-            tell you honestly whether we can look after it properly.
+            We collect location needs across Edmonton and the towns around it, then pass suitable
+            requests to independent vending operators that serve the area. If your building is
+            nearby but not on the list, ask—we&rsquo;ll tell you honestly whether we can make an
+            appropriate operator connection.
           </p>
           <div className="mt-8 grid gap-px border-2 border-ink/20 bg-ink/20 md:grid-cols-2">
             {FOCUS_AREAS.map((area) => (

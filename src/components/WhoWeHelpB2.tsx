@@ -2,14 +2,22 @@ const GROUPS = [
   {
     tag: "BEST FIT",
     title: "The right machine, not the leftover one",
-    body: "Snack, drinks, coffee or specialty—we start with who is actually in your building and what they buy, then recommend the machine type that suits it. If vending isn't a good fit for your space, we'll tell you that too.",
-    points: ["Matched to your people", "Product mix you approve", "Honest advice if it won't work"],
+    body: "Snack, drinks, coffee or specialty—we document who is actually in your building and what they need, then pass that location brief to an operator whose machine mix fits. If vending isn't a good fit for your space, we'll tell you that too.",
+    points: [
+      "Location brief matched to your people",
+      "Operator fit by machine type",
+      "Honest advice if it won't work",
+    ],
   },
   {
     tag: "NO COST",
-    title: "Nothing to pay, ever",
-    body: "You don't buy or lease the machine, and you don't pay for delivery, installation, stocking or repairs. The machine arrives ready to use and stays maintained at no charge to you.",
-    points: ["Zero upfront cost", "No service or repair bills", "Restocking handled for you"],
+    title: "Free location matching",
+    body: "There is no charge to submit your location need through Seven Vending Alberta. We connect you with a suitable vending operator; any equipment, service and product arrangements are handled directly with that operator.",
+    points: [
+      "No charge to submit your need",
+      "Direct operator conversation",
+      "Clear handoff of responsibilities",
+    ],
   },
 ];
 

@@ -17,8 +17,8 @@ export function SiteFooter() {
             />
           </a>
           <p className="mt-4 max-w-sm text-sm text-silver">
-            Helping Alberta property owners, facility managers, and machine operators find the
-            perfect vending match—completely free for locations.
+            We collect your location need and pass it to the right independent vending operator—
+            completely free for locations.
           </p>
         </div>
         <div className="font-mono text-xs text-silver">

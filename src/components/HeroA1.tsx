@@ -6,14 +6,14 @@ export function HeroA1({ onSelect }: { onSelect: (id: string) => void }) {
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 md:grid-cols-[1.25fr_1fr] md:items-center md:py-24">
         <div>
           <p className="font-mono text-xs tracking-[0.3em] text-amber">
-            ALBERTA / FREE VENDING FOR YOUR BUILDING
+            ALBERTA / LOCATION-TO-OPERATOR MATCHING
           </p>
           <h1 className="mt-4 font-display text-4xl leading-[1.05] tracking-tight text-paper uppercase md:text-6xl">
             Most operators bring what they own. We help you choose what actually works.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-silver md:text-lg">
-            Helping Alberta property owners, facility managers, and machine operators find the
-            perfect vending match—completely free for locations.
+            Tell us about your location needs. Seven Vending Alberta will pass them to the right
+            independent vending operator—completely free for locations.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-6">
             <button

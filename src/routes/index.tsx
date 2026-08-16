@@ -12,9 +12,9 @@ import { FAQ } from "@/components/FAQ";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SECTIONS } from "@/components/site-data";
 
-const TITLE = "Seven Vending Alberta — The Right Vending Machine for Your Space";
+const TITLE = "Seven Vending Alberta — Location-to-Operator Vending Matching";
 const DESC =
-  "Free vending machines for Alberta buildings. We help property owners and facility managers choose the right machine type—snack, drinks, coffee or specialty—with zero upfront cost.";
+  "Seven Vending Alberta collects vending location needs and connects property owners and facility managers with suitable independent vending operators—free for locations.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
