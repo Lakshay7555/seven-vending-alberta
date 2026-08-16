@@ -4,15 +4,16 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { HeroA1 } from "@/components/HeroA1";
 import { WhoWeHelpB2 } from "@/components/WhoWeHelpB2";
 import { ProcessC3 } from "@/components/ProcessC3";
+import { MachineTypes } from "@/components/MachineTypes";
 import { ServiceAreaD4 } from "@/components/ServiceAreaD4";
 import { ContactE5 } from "@/components/ContactE5";
 import { FAQ } from "@/components/FAQ";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SECTIONS } from "@/components/site-data";
 
-const TITLE = "Seven Vending Alberta — Vending Machine Location Finding";
+const TITLE = "Seven Vending Alberta — The Right Vending Machine for Your Space";
 const DESC =
-  "We find and secure high-traffic, approved vending machine locations across Alberta for operators. Scouting, site assessment and a placement-ready location report.";
+  "Free vending machines for Alberta buildings. We help property owners and facility managers choose the right machine type—snack, drinks, coffee or specialty—with zero upfront cost and a risk-free trial.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -59,6 +60,7 @@ function Index() {
       <main>
         <HeroA1 onSelect={select} />
         <WhoWeHelpB2 />
+        <MachineTypes />
         <ProcessC3 />
         <ServiceAreaD4 />
         <FAQ />

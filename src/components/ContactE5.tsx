@@ -3,24 +3,24 @@ import { EMAIL, PHONE, PHONE_HREF } from "./site-data";
 
 const FIELDS = [
   {
-    name: "operator",
-    label: "Operator / company name",
+    name: "business",
+    label: "Building or business name",
     type: "text",
-    placeholder: "Northside Vending Co.",
+    placeholder: "Northside Business Park",
   },
   {
-    name: "machines",
-    label: "Machine or format in service",
+    name: "people",
+    label: "How many people are on site daily?",
     type: "text",
-    placeholder: "Snack / drink combo; 30-minute service radius",
+    placeholder: "About 60 staff, day and evening shifts",
   },
   {
     name: "city",
-    label: "Primary city / route corridor",
+    label: "City or town",
     type: "text",
-    placeholder: "Edmonton / Nisku",
+    placeholder: "Edmonton",
   },
-  { name: "email", label: "Email", type: "email", placeholder: "you@operator.ca" },
+  { name: "email", label: "Email", type: "email", placeholder: "you@yourbuilding.ca" },
   { name: "phone", label: "Phone", type: "tel", placeholder: "(780) 555-0123" },
 ] as const;
 
@@ -38,12 +38,12 @@ export function ContactE5() {
         <div>
           <p className="font-mono text-xs tracking-[0.3em] text-amber">CONTACT</p>
           <h2 className="mt-4 font-display text-3xl tracking-tight text-paper uppercase md:text-4xl">
-            Get a route-specific search
+            Find out what fits your space
           </h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-silver">
-            Tell us where your route runs, what machine or format you operate and the type of site
-            you need. We&rsquo;ll scope a field-verified search around demand, format fit, approval
-            path and service economics—not just a list of addresses.
+            Tell us a little about your building and who&rsquo;s in it. We&rsquo;ll come back with a
+            straight recommendation—which machine type suits you, what it would stock, and what
+            you&rsquo;d earn. No cost, no pressure, and no obligation to go ahead.
           </p>
           <dl className="mt-10 border-t border-silver/30 pt-6 font-mono text-sm">
             <div className="flex gap-4 py-1">
@@ -67,12 +67,12 @@ export function ContactE5() {
 
         <div className="border-2 border-silver bg-paper p-6 md:p-8">
           <p className="border-b-2 border-dashed border-ink/30 pb-3 font-mono text-xs tracking-[0.2em] text-ink/70">
-            OPERATOR BRIEF &mdash; NO. 0007
+            LOCATION REQUEST &mdash; NO. 0007
           </p>
           {sent ? (
             <p className="py-10 font-mono text-sm leading-relaxed text-ink">
-              <span className="text-amber">&#9632;</span> REQUEST LOGGED. We&rsquo;ll call you
-              within one business day to scope your placement search.
+              <span className="text-amber">&#9632;</span> REQUEST RECEIVED. We&rsquo;ll call you
+              within one business day with a recommendation for your space.
             </p>
           ) : (
             <form onSubmit={handleSubmit} className="mt-6 space-y-5">
@@ -98,7 +98,7 @@ export function ContactE5() {
                 type="submit"
                 className="w-full border-2 border-ink bg-amber px-6 py-3 font-display text-sm tracking-[0.12em] text-navy uppercase transition-colors hover:bg-navy hover:text-amber active:translate-y-px"
               >
-                Submit Request
+                Send Request
               </button>
             </form>
           )}
