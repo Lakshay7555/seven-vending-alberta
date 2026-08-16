@@ -1,5 +1,4 @@
 import { useMemo, useState, type FormEvent } from "react";
-import { EMAIL } from "./site-data";
 
 type LocationType =
   "office" | "industrial" | "gym" | "retail" | "school" | "hospitality" | "institution" | "mixed";
@@ -393,39 +392,7 @@ export function MachineFitF4() {
 
   function handleLeadSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const value = (name: string) => String(formData.get(name) ?? "").trim();
-    const subject = `Machine Fit location brief: ${value("property") || "New property lead"}`;
-    const body = [
-      "PROPERTY-MANAGER LEAD",
-      "",
-      `Property / building: ${value("property")}`,
-      `Contact name: ${value("contactName")}`,
-      `Role: ${value("role")}`,
-      `Work email: ${value("email")}`,
-      `Phone: ${value("phone")}`,
-      `City / town: ${value("city")}`,
-      `Preferred contact: ${value("preferredContact")}`,
-      `Additional notes: ${value("notes") || "None provided"}`,
-      "",
-      "MACHINE FIT SCREENING",
-      `Primary suggested format: ${MACHINES[recommendation.primary].title}`,
-      `Alternative format: ${MACHINES[recommendation.secondary].title}`,
-      `Location type: ${labelFor(LOCATIONS, location)}`,
-      `Daily traffic: ${labelFor(TRAFFIC, traffic)}`,
-      `Operating hours: ${labelFor(OPERATING_HOURS, hours)}`,
-      `Primary audience: ${labelFor(AUDIENCES, audience)}`,
-      `Existing amenities: ${labelFor(EXISTING_OFFERS, existing)}`,
-      `Utilities: ${labelFor(UTILITIES, utilities)}`,
-      `Access: ${labelFor(ACCESS_OPTIONS, access)}`,
-      `Payment preference: ${labelFor(PAYMENT_OPTIONS, payments)}`,
-      `Available space: ${labelFor(SPACE_OPTIONS, space)}`,
-      "",
-      "Seven Vending Alberta is a location-to-operator matching service. A matched independent operator handles equipment and service discussions.",
-    ];
-
     setLeadPrepared(true);
-    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body.join("\n"))}`;
   }
 
   return (
@@ -727,18 +694,17 @@ export function MachineFitF4() {
                     Property manager contact details
                   </h3>
                   <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink/75">
-                    Add the contact details for the person who can discuss the location. The
-                    prepared email includes this screening brief and opens in your email app for
-                    delivery to Seven Vending Alberta.
+                    Add the contact details for the person who can discuss the location. Your
+                    screening brief and contact details will be reviewed by Seven Vending Alberta
+                    before a suitable operator is contacted.
                   </p>
 
                   {leadPrepared ? (
                     <div className="mt-5 border-l-4 border-amber bg-amber/10 px-4 py-4 text-sm leading-relaxed text-ink">
                       <span className="font-mono text-xs tracking-[0.14em] text-ink/70 uppercase">
-                        Email prepared ·{" "}
+                        Response received ·{" "}
                       </span>
-                      Review and send the prefilled email to pass this location need to Seven
-                      Vending Alberta.
+                      We will get back to you in 1–3 business days.
                     </div>
                   ) : (
                     <form onSubmit={handleLeadSubmit} className="mt-5 grid gap-4 sm:grid-cols-2">
@@ -838,7 +804,7 @@ export function MachineFitF4() {
                         type="submit"
                         className="sm:col-span-2 border-2 border-ink bg-amber px-5 py-4 font-display text-sm tracking-[0.13em] text-ink uppercase hover:bg-navy hover:text-amber"
                       >
-                        Prepare operator handoff email
+                        Submit
                       </button>
                     </form>
                   )}

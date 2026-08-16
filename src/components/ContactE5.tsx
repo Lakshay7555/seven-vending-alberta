@@ -30,29 +30,7 @@ export function ContactE5() {
       return;
     }
 
-    const formData = new FormData(event.currentTarget);
-    const value = (name: string) => String(formData.get(name) ?? "").trim();
-    const subject = `Operator interest: ${value("company") || "New vending operator"}`;
-    const body = [
-      "VENDING OPERATOR INTEREST",
-      "",
-      `Company: ${value("company")}`,
-      `Primary contact: ${value("contactName")}`,
-      `Role / title: ${value("role")}`,
-      `Work email: ${value("email")}`,
-      `Phone: ${value("phone")}`,
-      `Primary service area: ${value("serviceArea")}`,
-      `Secondary service area: ${value("secondaryArea") || "None provided"}`,
-      `Formats operated: ${formats.join(", ")}`,
-      `Current route / onboarding capacity: ${value("capacity")}`,
-      `Preferred location types: ${value("locationTypes") || "None provided"}`,
-      `Additional notes: ${value("notes") || "None provided"}`,
-      "",
-      "Seven Vending Alberta gathers property location needs and connects suitable requests with independent vending operators. Seven Vending does not provide or maintain machines.",
-    ];
-
     setEmailPrepared(true);
-    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body.join("\n"))}`;
   }
 
   return (
@@ -100,9 +78,8 @@ export function ContactE5() {
 
           {emailPrepared ? (
             <div className="py-10 font-mono text-sm leading-relaxed text-ink">
-              <span className="text-amber">&#9632;</span> EMAIL PREPARED. Review and send the
-              prefilled email to share your operator profile with Seven Vending Alberta. We will
-              contact you when a location need appears to fit your stated coverage and formats.
+              <span className="text-amber">&#9632;</span> RESPONSE RECEIVED. We will get back to you
+              in 1–3 business days.
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="mt-6 grid gap-5 sm:grid-cols-2">
@@ -254,7 +231,7 @@ export function ContactE5() {
                 type="submit"
                 className="sm:col-span-2 w-full border-2 border-ink bg-amber px-6 py-4 font-display text-sm tracking-[0.12em] text-navy uppercase transition-colors hover:bg-navy hover:text-amber active:translate-y-px"
               >
-                Prepare operator profile email
+                Submit
               </button>
             </form>
           )}
