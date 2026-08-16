@@ -17,8 +17,8 @@ export function SiteFooter() {
             />
           </a>
           <p className="mt-4 max-w-sm text-sm text-silver">
-            Helping Alberta property owners and facility managers choose the right vending machine
-            for their space—at no cost, with a risk-free trial.
+            Helping Alberta property owners, facility managers, and machine operators find the
+            perfect vending match—completely free for locations.
           </p>
         </div>
         <div className="font-mono text-xs text-silver">

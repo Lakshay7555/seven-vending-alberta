@@ -12,10 +12,8 @@ export function HeroA1({ onSelect }: { onSelect: (id: string) => void }) {
             Most operators bring what they own. We help you choose what actually works.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-silver md:text-lg">
-            Seven Vending Alberta helps property owners and facility managers pick the right vending
-            machine for their space—snacks, drinks, coffee or something specialty. No cost to you,
-            no long commitment, and a trial period so you can see how it performs before you keep
-            it.
+            Helping Alberta property owners, facility managers, and machine operators find the
+            perfect vending match—completely free for locations.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-6">
             <button
