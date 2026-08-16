@@ -23,7 +23,7 @@ export function KeypadNav({
             active === s.id ? "keypad-btn-lit" : ""
           }`}
         >
-          {s.code}
+          {s.label}
         </button>
       ))}
     </nav>
