@@ -1,6 +1,5 @@
 export const SECTIONS = [
   { id: "a1", label: "Home" },
-  { id: "b2", label: "Why locations" },
   { id: "mt", label: "Machine types" },
   { id: "c3", label: "How it works" },
   { id: "f4", label: "Machine fit" },
