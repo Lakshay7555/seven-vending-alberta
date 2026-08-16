@@ -10,8 +10,8 @@ const FAQS = [
     a: "We ask whether the site already has vending, a micro-market, a pantry program or another hosted service, and whether the host identifies any restrictions or renewal timing. A site with an incumbent is not automatically a bad lead, but we do not present it as an open opportunity without recording the competitive situation.",
   },
   {
-    q: "Why is Edmonton your primary market and Calgary selective?",
-    a: "Edmonton is our first focus for industrial, warehouse, fabrication, logistics and shift-work clusters where route density can support repeat service. In Calgary, we selectively evaluate small and mid-bay workplaces and managed properties such as apartments, hotels, institutions and arenas. Each city requires a different location screen.",
+    q: "Why does Seven Vending focus on Edmonton?",
+    a: "Edmonton is where we concentrate our fieldwork: industrial, warehouse, fabrication, logistics and shift-work clusters, plus route-adjacent commercial properties. A focused local search lets us check real demand, access, approval and route fit instead of selling broad, generic lead lists.",
   },
   {
     q: "How long does a typical engagement take?",

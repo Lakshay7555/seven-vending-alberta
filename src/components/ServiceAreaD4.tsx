@@ -1,26 +1,26 @@
 const CITIES = [
-  "Edmonton — primary",
-  "Calgary — selective",
-  "Red Deer",
+  "Edmonton",
   "Sherwood Park",
   "St. Albert",
   "Leduc",
   "Spruce Grove",
-  "Airdrie",
   "Fort Saskatchewan",
   "Nisku",
-  "Lethbridge",
-  "Grande Prairie",
+  "Beaumont",
+  "Devon",
+  "Stony Plain",
+  "Acheson",
+  "Morinville",
 ];
 
-const PLAYBOOKS = [
+const FOCUS_AREAS = [
   {
-    city: "Edmonton first",
-    body: "We prioritize industrial, warehouse, fabrication, logistics and shift-work clusters—especially where occupancy and route density support repeat service.",
+    title: "Industrial & shift-work",
+    body: "We prioritize warehouses, fabrication, logistics, auto-service and other Edmonton sites where regular shifts and food-access gaps can support repeat service.",
   },
   {
-    city: "Calgary selective",
-    body: "We evaluate small and mid-bay workplaces, plus routeable apartment, hotel, institutional and arena opportunities on format fit and property access.",
+    title: "Route-adjacent commercial",
+    body: "We evaluate commercial properties, apartments, hotels, institutions, arenas and rec facilities when access, approval and your operating model fit.",
   },
 ];
 
@@ -40,28 +40,31 @@ export function ServiceAreaD4() {
         <div>
           <p className="font-mono text-xs tracking-[0.3em] text-ink/60">D4 / SERVICE AREA</p>
           <h2 className="mt-4 font-display text-3xl tracking-tight text-ink uppercase md:text-4xl">
-            Edmonton first. Calgary when the fit is right.
+            Edmonton scouting, built around your route.
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/80">
-            We scout across Alberta, but we do not treat every city or address the same. Edmonton is
-            our primary market for route-density and industrial opportunity. Calgary is a targeted
-            secondary market where we validate the operator&rsquo;s machine, site format, access and
-            service economics before recommending a placement.
+            We focus on Edmonton and the surrounding industrial and commercial corridor. Every
+            scouting run is built around your machine format, target site type, service radius and
+            route economics—so you get a locally qualified placement path rather than a broad list
+            of addresses.
           </p>
           <div className="mt-8 grid gap-px border-2 border-ink/20 bg-ink/20 md:grid-cols-2">
-            {PLAYBOOKS.map((playbook) => (
-              <article key={playbook.city} className="bg-paper p-5">
+            {FOCUS_AREAS.map((area) => (
+              <article key={area.title} className="bg-paper p-5">
                 <p className="font-mono text-xs tracking-[0.18em] text-amber uppercase">
-                  {playbook.city}
+                  {area.title}
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-ink/80">{playbook.body}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink/80">{area.body}</p>
               </article>
             ))}
           </div>
           <ul className="mt-10 grid grid-cols-2 gap-px border-2 border-ink/20 bg-ink/20 sm:grid-cols-3">
-            {CITIES.map((c) => (
-              <li key={c} className="bg-paper px-4 py-3 font-mono text-xs tracking-wide text-ink">
-                {c}
+            {CITIES.map((city) => (
+              <li
+                key={city}
+                className="bg-paper px-4 py-3 font-mono text-xs tracking-wide text-ink"
+              >
+                {city}
               </li>
             ))}
           </ul>
@@ -69,9 +72,9 @@ export function ServiceAreaD4() {
             SITE TYPES WE TARGET
           </p>
           <ul className="mt-4 grid gap-1 sm:grid-cols-2">
-            {ZONES.map((z) => (
-              <li key={z} className="text-sm text-ink/80">
-                <span className="text-amber">&#9632;</span> {z}
+            {ZONES.map((zone) => (
+              <li key={zone} className="text-sm text-ink/80">
+                <span className="text-amber">&#9632;</span> {zone}
               </li>
             ))}
           </ul>
@@ -79,7 +82,7 @@ export function ServiceAreaD4() {
         <svg
           viewBox="0 0 200 300"
           role="img"
-          aria-label="Outline map of Alberta showing Edmonton and Calgary"
+          aria-label="Outline map of Alberta showing the Edmonton service area"
           className="h-auto w-44 justify-self-center md:w-56"
         >
           <path
@@ -88,15 +91,13 @@ export function ServiceAreaD4() {
             stroke="#1A1A1A"
             strokeWidth="2"
           />
-          <circle cx="112" cy="112" r="5" fill="#FFB627" stroke="#1A1A1A" strokeWidth="2" />
-          <text x="124" y="116" fontFamily="monospace" fontSize="12" fill="#1A1A1A">
+          <circle cx="112" cy="112" r="7" fill="#FFB627" stroke="#1A1A1A" strokeWidth="2" />
+          <text x="128" y="108" fontFamily="monospace" fontSize="12" fill="#1A1A1A">
             EDMONTON
           </text>
-          <circle cx="96" cy="196" r="5" fill="#FFB627" stroke="#1A1A1A" strokeWidth="2" />
-          <text x="108" y="200" fontFamily="monospace" fontSize="12" fill="#1A1A1A">
-            CALGARY
+          <text x="128" y="124" fontFamily="monospace" fontSize="10" fill="#1A1A1A">
+            + METRO
           </text>
-          <line x1="112" y1="112" x2="96" y2="196" stroke="#FFB627" strokeWidth="2" />
         </svg>
       </div>
     </section>
