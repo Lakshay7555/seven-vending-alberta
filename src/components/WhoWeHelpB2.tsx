@@ -11,18 +11,6 @@ const GROUPS = [
     body: "You don't buy or lease the machine, and you don't pay for delivery, installation, stocking or repairs. The machine arrives ready to use and stays maintained at no charge to you.",
     points: ["Zero upfront cost", "No service or repair bills", "Restocking handled for you"],
   },
-  {
-    tag: "REVENUE SHARE",
-    title: "You earn only when it sells",
-    body: "You receive a share of the sales. There are no minimums, no monthly fees and nothing owing in a slow month—if the machine doesn't sell, it costs you nothing.",
-    points: ["Share of every sale", "No minimums or fees", "Clear, simple statements"],
-  },
-  {
-    tag: "TRIAL",
-    title: "Try it before you commit",
-    body: "Start with a trial period. We watch what sells, adjust the products, and if it isn't working for your building we remove the machine—no cost, no argument, no paperwork trail.",
-    points: ["Zero-risk trial", "Product mix tuned to results", "Free removal if it's not right"],
-  },
 ];
 
 export function WhoWeHelpB2() {

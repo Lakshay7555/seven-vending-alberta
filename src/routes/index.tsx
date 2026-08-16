@@ -14,7 +14,7 @@ import { SECTIONS } from "@/components/site-data";
 
 const TITLE = "Seven Vending Alberta — The Right Vending Machine for Your Space";
 const DESC =
-  "Free vending machines for Alberta buildings. We help property owners and facility managers choose the right machine type—snack, drinks, coffee or specialty—with zero upfront cost and a risk-free trial.";
+  "Free vending machines for Alberta buildings. We help property owners and facility managers choose the right machine type—snack, drinks, coffee or specialty—with zero upfront cost.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

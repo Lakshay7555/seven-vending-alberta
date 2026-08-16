@@ -42,8 +42,8 @@ export function ContactE5() {
           </h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-silver">
             Tell us a little about your building and who&rsquo;s in it. We&rsquo;ll come back with a
-            straight recommendation—which machine type suits you, what it would stock, and what
-            you&rsquo;d earn. No cost, no pressure, and no obligation to go ahead.
+            straight recommendation—which machine type suits you, what it would stock, and how we
+            would support it. No cost, no pressure, and no obligation to go ahead.
           </p>
           <dl className="mt-10 border-t border-silver/30 pt-6 font-mono text-sm">
             <div className="flex gap-4 py-1">

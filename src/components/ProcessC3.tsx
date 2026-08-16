@@ -13,9 +13,9 @@ const STEPS = [
   },
   {
     n: "03",
-    title: "You approve and run a trial",
-    body: "Once you say yes, the machine is delivered, installed and stocked at no cost. You run it as a trial, we adjust the products to what actually sells, and if it isn't right we take it away.",
-    detail: "YOU RISK: NOTHING",
+    title: "You approve and launch",
+    body: "Once you approve the plan, the machine is delivered, installed and stocked at no cost. We keep the product mix aligned with what your people actually use.",
+    detail: "YOU STAY IN CONTROL",
   },
 ];
 
@@ -42,8 +42,8 @@ export function ProcessC3() {
           ))}
         </ol>
         <p className="mt-8 border-l-4 border-red pl-4 font-mono text-xs tracking-wide text-silver">
-          <span className="text-red">NOTE:</span> nothing is delivered until you approve it, and
-          nothing stays if the trial doesn&rsquo;t work for your building.
+          <span className="text-red">NOTE:</span> nothing is delivered until you approve the final
+          machine and product plan for your building.
         </p>
       </div>
     </section>
