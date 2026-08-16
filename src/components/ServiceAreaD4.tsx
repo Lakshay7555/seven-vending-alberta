@@ -15,22 +15,22 @@ const CITIES = [
 
 const FOCUS_AREAS = [
   {
-    title: "Industrial & shift-work",
-    body: "We prioritize warehouses, fabrication, logistics, auto-service and other Edmonton sites where regular shifts and food-access gaps can support repeat service.",
+    title: "Workplaces & industrial sites",
+    body: "Offices, warehouses, factories, shops and logistics sites—especially where staff are on site for full shifts and the nearest store is a drive away.",
   },
   {
-    title: "Route-adjacent commercial",
-    body: "We evaluate commercial properties, apartments, hotels, institutions, arenas and rec facilities when access, approval and your operating model fit.",
+    title: "Public & residential buildings",
+    body: "Apartments, hotels, gyms, schools, arenas, clinics and rec centres where residents, members or visitors want something quick on site.",
   },
 ];
 
 const ZONES = [
-  "Industrial, warehouse & shift-work sites",
-  "Small & mid-bay workplaces",
-  "Route-adjacent commercial clusters",
-  "Apartments, hotels & institutions",
+  "Offices & business parks",
+  "Warehouses, factories & shops",
+  "Apartments & condo buildings",
+  "Hotels & waiting areas",
   "Gyms, arenas & rec centres",
-  "Auto dealerships & service bays",
+  "Schools, clinics & auto dealerships",
 ];
 
 export function ServiceAreaD4() {
@@ -40,13 +40,12 @@ export function ServiceAreaD4() {
         <div>
           <p className="font-mono text-xs tracking-[0.3em] text-ink/60">SERVICE AREA</p>
           <h2 className="mt-4 font-display text-3xl tracking-tight text-ink uppercase md:text-4xl">
-            Edmonton scouting, built around your route.
+            Serving Edmonton and the surrounding area.
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/80">
-            We focus on Edmonton and the surrounding industrial and commercial corridor. Every
-            scouting run is built around your machine format, target site type, service radius and
-            route economics—so you get a locally qualified placement path rather than a broad list
-            of addresses.
+            We visit buildings across Edmonton and the towns around it, so service calls and
+            restocking happen quickly. If your building is nearby but not on the list, ask—we&rsquo;ll
+            tell you honestly whether we can look after it properly.
           </p>
           <div className="mt-8 grid gap-px border-2 border-ink/20 bg-ink/20 md:grid-cols-2">
             {FOCUS_AREAS.map((area) => (
@@ -69,7 +68,7 @@ export function ServiceAreaD4() {
             ))}
           </ul>
           <p className="mt-10 font-mono text-xs tracking-[0.2em] text-ink/60">
-            SITE TYPES WE TARGET
+            BUILDINGS WE WORK WITH
           </p>
           <ul className="mt-4 grid gap-1 sm:grid-cols-2">
             {ZONES.map((zone) => (
