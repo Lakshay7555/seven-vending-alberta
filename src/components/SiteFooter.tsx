@@ -11,9 +11,9 @@ export function SiteFooter() {
             className="inline-flex items-center"
           >
             <img
-              src="/brand/seven-vending-alberta-logo-mark.png"
+              src="/brand/seven-vending-alberta-logo-full.webp"
               alt="Seven Vending Alberta"
-              className="h-16 w-16 object-contain md:h-20 md:w-20"
+              className="h-20 w-auto md:h-24"
             />
           </a>
           <p className="mt-4 max-w-sm text-sm text-silver">
