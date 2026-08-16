@@ -11,17 +11,19 @@ export function SiteHeader({
   return (
     <header className="sticky top-0 z-50 border-b-2 border-silver/30 bg-navy">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 md:flex-row md:items-center md:justify-between md:gap-6 md:py-4">
-        <div className="flex items-baseline justify-between gap-4">
+        <div className="flex items-center justify-between gap-4">
           <a
             href="#a1"
-            className="font-display text-sm leading-none tracking-[0.14em] text-paper uppercase md:text-base"
+            aria-label="Seven Vending Alberta home"
+            className="inline-flex shrink-0 items-center"
           >
-            Seven Vending <span className="text-amber">Alberta</span>
+            <img
+              src="/brand/seven-vending-alberta-logo.png"
+              alt="Seven Vending Alberta"
+              className="w-48 h-auto md:w-56"
+            />
           </a>
-          <a
-            href={PHONE_HREF}
-            className="font-mono text-xs text-amber md:hidden"
-          >
+          <a href={PHONE_HREF} className="font-mono text-xs text-amber md:hidden">
             {PHONE}
           </a>
         </div>

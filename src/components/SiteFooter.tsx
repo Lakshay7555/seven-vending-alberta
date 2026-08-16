@@ -5,12 +5,20 @@ export function SiteFooter() {
     <footer className="border-t-2 border-silver/30 bg-navy">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="font-display text-sm tracking-[0.14em] text-paper uppercase">
-            Seven Vending <span className="text-amber">Alberta</span>
-          </p>
-          <p className="mt-3 text-sm text-silver">
+          <a
+            href="#a1"
+            aria-label="Seven Vending Alberta home"
+            className="inline-flex items-center"
+          >
+            <img
+              src="/brand/seven-vending-alberta-logo.png"
+              alt="Seven Vending Alberta"
+              className="w-52 h-auto md:w-60"
+            />
+          </a>
+          <p className="mt-4 max-w-sm text-sm text-silver">
             Field-verified, route-specific placement acquisition for vending operators across
-            Alberta.
+            Edmonton and the surrounding corridor.
           </p>
         </div>
         <div className="font-mono text-xs text-silver">
