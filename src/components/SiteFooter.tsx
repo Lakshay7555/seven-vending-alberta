@@ -17,8 +17,8 @@ export function SiteFooter() {
             />
           </a>
           <p className="mt-4 max-w-sm text-sm text-silver">
-            Field-verified, route-specific placement acquisition for vending operators across
-            Edmonton and the surrounding corridor.
+            Helping Alberta property owners and facility managers choose the right vending machine
+            for their space—at no cost, with a risk-free trial.
           </p>
         </div>
         <div className="font-mono text-xs text-silver">
